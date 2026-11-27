@@ -11,8 +11,8 @@ student_names = set()
 
 def add_student():
 
-# I used input() to ask the user to enter his/her name.
-    student_name = input("Enter student name: ")
+# I used input() to ask the user to enter his/her name. # I used .strip() to remove extra spaces from the beginning and end.
+    student_name = input("Enter student name: ").strip()
 
 # I used if to check if the name is empty.
     if student_name == "":
@@ -34,32 +34,42 @@ def add_student():
 
 
 def remove_student():
+# I used .strip() to remove extra spaces from the beginning and end.
+    student_name = input("Enter student name you want to remove: ").strip()
 
-    student_name = input("Enter student name you want to remove: ")
+# I used if to check if the name is empty.
+    if student_name == "":
+        print("Please enter student name.")
 
-# I used if to check if the name exists.
-    if student_name.lower() in student_names:
+# I used elif to check if the student name exists.
+    elif student_name.lower() in student_names:
 
-# I used for to find the student in the list
+# I used for to find the student in the list.
         for student in students:
 
             if student.lower() == student_name.lower():
 
-# I used remove() to remove or delete the student name from the list.
+# I used remove() to remove the student name from the list.
                 students.remove(student)
-# I used remove() and lower() to remove or delete the student name from the set.
+
+# I used remove() and lower() to remove the name from the set.
                 student_names.remove(student.lower())
 
                 print("Student removed successfully!")
                 break
+
     else:
         print("Student not found!")
 
 
 def search_student():
 
-# I used input() to ask the student to search the name.
-    search_name = input("Enter student name you want to search: ")  
+# I used input() to ask the student to search the name. # I used .strip() to remove extra spaces from the beginning and end.
+    search_name = input("Enter student name you want to search: ").strip() 
+
+    if search_name == "":
+        print("Please enter student name.")
+        return
 
 # I used found = False variable to check if a student is found.
     found = False
@@ -109,7 +119,7 @@ def main():
         print("5. Exit")
 
 # I used imput() to ask the student to select an option.
-        choice = input("Enter you want to proccess: ")
+        choice = input("Enter your choice: ")
 
         if choice == "1":
             add_student()
