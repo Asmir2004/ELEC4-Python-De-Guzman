@@ -1,0 +1,2 @@
+Hello I'm yasmien! This is my sample text file.
+I am testing the Open File function.
